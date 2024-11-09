@@ -4,10 +4,10 @@ Este projeto foi desenvolvido por **João Luis da Cruz de Souza**, **Verônica N
 
 O objetivo deste projeto é estabelecer comunicação serial de 8 bits entre dois módulos em um FPGA (DE2-115 Altera), utilizando um protocolo UART para transmissão de dados e o **Código de Hamming** para detectar e corrigir erros que possam ocorrer durante a comunicação.
 
-## 📚 Visão Geral
+##  Visão Geral
 A comunicação serial é realizada através de uma **Máquina de Estados** (FSM), que controla o envio de um bit de início (START), seguido pelos 8 bits de dados e, ao final, um bit de parada (STOP). A implementação do **Código de Hamming** adiciona bits de paridade que permitem a detecção e correção de erros de um único bit, garantindo maior confiabilidade na comunicação entre os módulos.
 
-## 🔧 O Projeto
+##  O Projeto
 A implementação foi idealizada em **C/C++** e, posteriormente, traduzida para **Verilog**. O sistema de comunicação entre transmissor (**TX**) e receptor (**RX**) é baseado nos módulos `uart_tx` e `uart_rx`, que foram projetados para enviar e receber dados de 8 bits, verificando e corrigindo erros com bits de paridade Hamming.
 
 ### Estrutura do Código
@@ -17,16 +17,16 @@ A implementação foi idealizada em **C/C++** e, posteriormente, traduzida para 
   - **Receptor (`uart_rx`)**: A FSM do receptor reconhece o início, dados e final da transmissão.
     - Após a recepção completa, os bits de paridade são verificados para identificar e corrigir possíveis erros de um único bit na mensagem recebida.
 
-## 🚀 Execução do Projeto no FPGA
+##  Execução do Projeto no FPGA
 Para executar este projeto, ele deve ser carregado no FPGA **DE2-115 Altera**.
 
-## 📊 Diagrama de Estados
+##  Diagrama de Estados
 1. **Estado IDLE**: O sistema espera pela habilitação do transmissor ou pelo recebimento do sinal de start.
 2. **Start Bit**: Um bit de início é enviado para sincronizar a transmissão.
 3. **Data Bits**: A sequência de 8 bits é transmitida junto com os bits de paridade Hamming.
 4. **Stop Bit**: Finaliza a transmissão e aguarda a confirmação de recepção.
 
-## ⚙️ Código de Hamming
+## Código de Hamming
 O **Código de Hamming** é usado para detectar e corrigir erros de um bit na comunicação serial. Para a mensagem de 8 bits, são adicionados 4 bits de paridade:
 
 - **Paridade P1**: cobre os bits 1, 3, 5, 7, 9 e 11.
