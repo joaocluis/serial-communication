@@ -17,8 +17,6 @@ A implementação foi idealizada em **C/C++** e, posteriormente, traduzida para 
   - **Receptor (`uart_rx`)**: A FSM do receptor reconhece o início, dados e final da transmissão.
     - Após a recepção completa, os bits de paridade são verificados para identificar e corrigir possíveis erros de um único bit na mensagem recebida.
 
-##  Execução do Projeto no FPGA
-Para executar este projeto, ele deve ser carregado no FPGA **DE2-115 Altera**.
 
 ##  Diagrama de Estados
 1. **Estado IDLE**: O sistema espera pela habilitação do transmissor ou pelo recebimento do sinal de start.
