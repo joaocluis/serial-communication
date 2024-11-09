@@ -23,6 +23,7 @@ A implementação foi idealizada em **C/C++** e, posteriormente, traduzida para 
 2. **Start Bit**: Um bit de início é enviado para sincronizar a transmissão.
 3. **Data Bits**: A sequência de 8 bits é transmitida junto com os bits de paridade Hamming.
 4. **Stop Bit**: Finaliza a transmissão e aguarda a confirmação de recepção.
+
 A mesma lógica é utilizada no receptor.
 
 ## Código de Hamming
